@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Book Club Meetings</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 960px; margin: 20px auto; padding: 0 12px; }
+    h1 { color: #2c3e50; }
+    form { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-bottom: 20px; }
+    input { padding: 8px; }
+    button { padding: 8px 14px; cursor: pointer; }
+    #saveBtn { background: #27ae60; color: white; border: none; }
+    #cancelBtn { display: none; }
+    table { width: 100%; border-collapse: collapse; }
+    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
+    th { background: #2c3e50; color: white; }
+    .del { background: #c0392b; color: white; border: none; }
+    .edit { background: #2980b9; color: white; border: none; }
+    #msg { margin: 10px 0; font-weight: bold; }
+    .table-wrap { overflow-x: auto; }
+  </style>
+</head>
+<body>
+  <h1>Book Club Meetings</h1>
+  <div id="msg"></div>
+
+  <form id="meetingForm">
+    <input type="hidden" id="meetingId">
+    <input id="book_title" placeholder="Book title *" required>
+    <input id="author" placeholder="Author">
+    <input id="meeting_date" type="date">
+    <input id="meeting_time" type="time">
+    <input id="location" placeholder="Location">
+    <input id="host_name" placeholder="Host name">
+    <button type="submit" id="saveBtn">Add Meeting</button>
+    <button type="button" id="cancelBtn">Cancel Edit</button>
+  </form>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th><th>Book</th><th>Author</th><th>Date</th>
+          <th>Time</th><th>Location</th><th>Host</th><th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
